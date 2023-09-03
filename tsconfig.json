@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "noImplicitAny": true, // Если не хотим указывтаь тип, обязательно указываем any. Подсвечивает места где не указан тип явно
+      "module": "ESNext",
+      "target": "es5",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true, // Позволяет работать с пакетами commongs как с обычными пакетами с помощью import
+      "allowSyntheticDefaultImports": true // Позволяет пользоваться import, export default без *
+    },
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS"
+        },
+    },
+  }
