@@ -4,7 +4,7 @@
       "noImplicitAny": true, // Если не хотим указывтаь тип, обязательно указываем any. Подсвечивает места где не указан тип явно
       "module": "ESNext",
       "target": "es5",
-      "jsx": "react",
+      "jsx": "react-jsx",
       "allowJs": true,
       "moduleResolution": "node",
       "esModuleInterop": true, // Позволяет работать с пакетами commongs как с обычными пакетами с помощью import
