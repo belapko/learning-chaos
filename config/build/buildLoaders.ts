@@ -1,6 +1,8 @@
 import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
-export function buildLoaders(): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const typescriptLoader = {
         // ts to js when webpack compiling. If we don't use ts, we need babel-loader
         test: /\.tsx?$/,
@@ -12,9 +14,17 @@ export function buildLoaders(): webpack.RuleSetRule[] {
         test: /\.s[ac]ss$/i,
         use: [
             // Creates `style` nodes from JS strings
-            'style-loader',
+            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader, // create individual css files in dev mode?
             // Translates CSS into CommonJS
-            'css-loader',
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]', // classNames
+                        auto: /\.module./, // exclude random classname for not .module. files
+                    },
+                },
+            },
             // Compiles Sass to CSS
             'sass-loader',
         ],

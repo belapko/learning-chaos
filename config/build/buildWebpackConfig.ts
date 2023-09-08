@@ -16,7 +16,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             clean: true, // create new build file and delete old
         },
         module: {
-            rules: buildLoaders(), // the rules by which the project is going
+            rules: buildLoaders(options), // the rules by which the project is going
         },
         resolve: buildResolvers(), // these options change how modules are resolved
         plugins: buildPlugins(options), // plugins configuration
