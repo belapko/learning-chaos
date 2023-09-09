@@ -1,19 +1,21 @@
 import './index.scss';
-import { Counter } from './components/Counter';
 import { Route, Routes } from 'react-router-dom';
-import { AboutPage } from './pages/AboutPage/AboutPage';
-import { MainPage } from './pages/MainPage/MainPage';
 import { Link } from 'react-router-dom';
+import { Suspense } from 'react';
+import { AboutPageLazy } from './pages/AboutPage/AboutPage.lazy';
+import { MainPageLazy } from './pages/MainPage/MainPage.lazy';
 
 export const App = () => {
     return (
         <div className='app'>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
-            <Routes>
-                <Route path={'/about'} element={<AboutPage />} />
-                <Route path={'/'} element={<MainPage />} />
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path={'/about'} element={<AboutPageLazy />} />
+                    <Route path={'/'} element={<MainPageLazy />} />
+                </Routes>
+            </Suspense>
         </div>
     );
 };
