@@ -1,0 +1,10 @@
+@import 'normalize';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
+
+.app {
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--default-font)
+}

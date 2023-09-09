@@ -9,7 +9,7 @@
         "moduleResolution": "node",
         "esModuleInterop": true, // Позволяет работать с пакетами commongs как с обычными пакетами с помощью import
         "allowSyntheticDefaultImports": true, // Позволяет пользоваться import, export default без *
-        "baseUrl": "." // absolute imports
+        // "baseUrl": "./src" // absolute imports
     },
     "ts-node": {
         "compilerOptions": {
