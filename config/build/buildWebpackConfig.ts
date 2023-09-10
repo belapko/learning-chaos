@@ -18,7 +18,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options), // the rules by which the project is going
         },
-        resolve: buildResolvers(), // these options change how modules are resolved
+        resolve: buildResolvers(options), // these options change how modules are resolved
         plugins: buildPlugins(options), // plugins configuration
         devtool: isDev ? 'inline-source-map' : undefined, // to see where errors in code
         devServer: isDev ? buildDevServer(options) : undefined, // dev server config. run webpack and server on each code change
