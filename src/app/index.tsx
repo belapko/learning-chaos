@@ -5,12 +5,13 @@ import { Suspense } from 'react';
 import { AboutPageLazy } from '../pages/AboutPage/AboutPage.lazy';
 import { MainPageLazy } from '../pages/MainPage/MainPage.lazy';
 import { useTheme } from '../theme/useTheme';
+import { classNames } from '../helpers/classNames';
 
 export const App = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', theme)}>
             <button onClick={toggleTheme}>Change theme</button>
             <Link to={'/'}>Main</Link>
             <Link to={'/about'}>About</Link>
