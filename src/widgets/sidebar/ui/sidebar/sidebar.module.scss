@@ -1,19 +1,58 @@
-.sidebar {
-    height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width);
-    padding: 20px 10px;
-    transition: width 0.5s ease-in-out;
-}
-
-.iconsContainer {
+@mixin menu-container {
     background-color: var(--secondary-light-color);
-    height: 100%;
+    padding: 10px 0px;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
+.sidebar {
+    height: calc(100vh - var(--navbar-height));
+    padding: 20px 10px;
+    display: flex;
 }
 
+.iconsContainer {
+    // icons
+    @include menu-container;
+    width: var(--sidebar-width-collapsed);
+    align-items: center;
+    transition: all 0.4s ease-out;
+    box-shadow: -2px -2px 5px 2px var(--shadow-color);
+}
+
+.iconsTextContainer {
+    // icons text
+    @include menu-container;
+    align-items: flex-start;
+    overflow: hidden;
+    width: 0;
+    transition: all 0.4s ease-out;
+}
+
+.show .iconsTextContainer {
+    width: var(--sidebar-width);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.show .iconsContainer {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    stroke: var(--secondary-font);
+    transition: transform ease 300ms;
+}
+
+.icon:hover {
+    transform: translate(2px, -2px);
+}
+
+.button {
+    color: var(--secondary-font);
+    height: 2em;
+}

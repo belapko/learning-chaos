@@ -1,7 +1,7 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
 import styles from './navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames';
-import { Link } from '@/shared/ul/link/Link';
+import { Link } from '@/shared/ui/link/Link';
 import { ThemeSwitcher } from '@/widgets/theme';
 
 interface NavbarProps {
