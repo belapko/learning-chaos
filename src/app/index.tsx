@@ -4,6 +4,7 @@ import { withRouter } from './providers';
 import { classNames } from '@/shared/lib/classNames';
 import { Routing } from '@/pages';
 import { Navbar } from '@/widgets/navbar';
+import { Sidebar } from '@/widgets/sidebar';
 
 const App = () => {
     const { theme } = useTheme();
@@ -11,7 +12,12 @@ const App = () => {
     return (
         <div className={classNames('app', [theme])}>
             <Navbar />
-            <Routing />
+            <div className='page-container'>
+                <Sidebar />
+                <div className='content'>
+                    <Routing />
+                </div>
+            </div>
         </div>
     );
 };

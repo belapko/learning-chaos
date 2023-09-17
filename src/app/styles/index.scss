@@ -8,3 +8,32 @@
     background: var(--bg-color);
     color: var(--default-font);
 }
+
+.page-container {
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #6b6e70;
+
+    &-track {
+        background-color: #6b6e70;
+        border-radius: 5px;
+    }
+
+    &-thumb {
+        background-color: #474b4f;
+        border-radius: 5px;
+    }
+
+    &-corner {
+        background-color: #6b6e70;
+    }
+}

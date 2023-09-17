@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
     box-shadow: 0px 2px 5px 2px var(--shadow-color);
+    height: var(--navbar-height);
 }
 
 .links {
@@ -12,10 +13,11 @@
 }
 
 .productName {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     font-weight: var(--font-bold);
     cursor: pointer;
     transition: all ease-in-out 0.3s;
+    color: var(--primary-light-color);
 }
 
 .productName:hover {
