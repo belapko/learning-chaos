@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    box-shadow: 0px 2px 5px 2px var(--shadow-color);
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.productName {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-bold);
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.productName:hover {
+    transform: scale(1.1);
+}

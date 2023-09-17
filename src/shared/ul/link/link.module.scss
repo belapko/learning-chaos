@@ -1,0 +1,20 @@
+.link {
+    color: var(--primary-light-color);
+}
+
+.active {
+    font-weight: var(--font-bold);
+}
+
+:not(.active).primary::after  {
+    transition: 0.3s;
+    background: none repeat scroll 0 0 var(--primary-dark-color);
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+}
+
+:not(.active).primary:hover::after {
+    width: 100%;
+}

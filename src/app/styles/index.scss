@@ -1,10 +1,10 @@
-@import 'normalize';
-@import 'variables/global';
-@import 'themes/light';
-@import 'themes/dark';
+@import './normalize.scss';
+@import './variables/global.scss';
+@import './themes/light.scss';
+@import './themes/dark.scss';
 
 .app {
     font: var(--font-m);
     background: var(--bg-color);
-    color: var(--default-font)
+    color: var(--default-font);
 }

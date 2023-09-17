@@ -1,5 +1,5 @@
 :root {
-    --font-family-main: Poppins, 'Times New Roman', Serif;
+    --font-family-main: Poppins, sans-serif;
 
     --font-size-m: 16px;
     --font-line-m: 24px;
@@ -8,4 +8,9 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-family-main) / var(--font-size-l) / var(--font-line-l);
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-bold: 600;
+    --font-extrabold: 700;
 }
