@@ -12,7 +12,7 @@ interface LinkProps extends ReactLinkProps {
     theme?: string;
 }
 
-export const Link: FC<LinkProps> = ({ to, children, className, theme=LinkTheme.PRIMARY, ...otherProps }: PropsWithChildren<LinkProps>) => {
+export const Link: FC<PropsWithChildren<LinkProps>> = ({ to, children, className, theme=LinkTheme.PRIMARY, ...otherProps }) => {
     const resolved = useResolvedPath(to);
     const match = useMatch({path: resolved.pathname, end: true}); 
 

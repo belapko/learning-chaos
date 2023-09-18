@@ -3,6 +3,8 @@ import styles from './navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames';
 import { Link } from '@/shared/ui/link/Link';
 import { ThemeSwitcher } from '@/widgets/theme';
+import { LangSwitcher } from '@/widgets/lang';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
     className?: string;
@@ -10,20 +12,28 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
     const { theme } = useTheme();
+    const { t } = useTranslation('navbar');
 
     return (
         <nav className={classNames(styles.navbar, [className, styles[theme]])}>
-            <ThemeSwitcher />
-            <ul className={styles.links}>
+            <ul className={styles.gap10}>
                 <li>
-                    <Link to={'/'}>main</Link>
+                    <ThemeSwitcher />
                 </li>
                 <li>
-                    <Link to={'/about'}>about</Link>
+                    <LangSwitcher />
+                </li>
+            </ul>
+            <ul className={styles.gap10}>
+                <li>
+                    <Link to={'/'}>{t('Main')}</Link>
+                </li>
+                <li>
+                    <Link to={'/about'}>{t('About')}</Link>
                 </li>
             </ul>
             <a className={styles.productName} href='https://github.com/belapko' target='_blank'>
-                Belapko
+                {t('Belapko')}
             </a>
             <ul>
                 <li></li>

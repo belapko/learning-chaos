@@ -5,19 +5,24 @@ import { classNames } from '@/shared/lib/classNames';
 import { Routing } from '@/pages';
 import { Navbar } from '@/widgets/navbar';
 import { Sidebar } from '@/widgets/sidebar';
+import { Suspense } from 'react';
+
+
 
 const App = () => {
     const { theme } = useTheme();
 
     return (
         <div className={classNames('app', [theme])}>
-            <Navbar />
-            <div className='page-container'>
-                <Sidebar />
-                <div className='content'>
-                    <Routing />
+            <Suspense fallback=''>
+                <Navbar />
+                <div className='page-container'>
+                    <Sidebar />
+                    <div className='content'>
+                        <Routing />
+                    </div>
                 </div>
-            </div>
+            </Suspense>
         </div>
     );
 };
