@@ -7,37 +7,37 @@ import { LangSwitcher } from '@/widgets/lang';
 import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
-    className?: string;
+	className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-    const { theme } = useTheme();
-    const { t } = useTranslation('navbar');
+	const { theme } = useTheme();
+	const { t } = useTranslation('navbar');
 
-    return (
-        <nav className={classNames(styles.navbar, [className, styles[theme]])}>
-            <ul className={styles.gap10}>
-                <li>
-                    <ThemeSwitcher />
-                </li>
-                <li>
-                    <LangSwitcher />
-                </li>
-            </ul>
-            <ul className={styles.gap10}>
-                <li>
-                    <Link to={'/'}>{t('Main')}</Link>
-                </li>
-                <li>
-                    <Link to={'/about'}>{t('About')}</Link>
-                </li>
-            </ul>
-            <a className={styles.productName} href='https://github.com/belapko' target='_blank'>
-                {t('Belapko')}
-            </a>
-            <ul>
-                <li></li>
-            </ul>
-        </nav>
-    );
+	return (
+		<nav className={classNames(styles.navbar, [className, styles[theme]])}>
+			<ul className={styles.gap10}>
+				<li>
+					<ThemeSwitcher />
+				</li>
+				<li>
+					<LangSwitcher />
+				</li>
+			</ul>
+			<ul className={styles.gap10}>
+				<li>
+					<Link to={'/'}>{t('Main')}</Link>
+				</li>
+				<li>
+					<Link to={'/about'}>{t('About')}</Link>
+				</li>
+			</ul>
+			<a className={styles.productName} href='https://github.com/belapko' target='_blank' rel='noreferrer'>
+				{t('Belapko')}
+			</a>
+			<ul>
+				<li></li>
+			</ul>
+		</nav>
+	);
 };

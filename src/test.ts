@@ -1,4 +1,4 @@
-export const func = (arg: number): string => {
-    console.log('message');
-    return '';
+export const func = (_: number): string => {
+	console.log('message');
+	return '';
 };

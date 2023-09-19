@@ -6,7 +6,7 @@ import '@/shared/config/i18n/i18n'; // needs to be bundled
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-    <ThemeProvider>
-        <App />
-    </ThemeProvider>
+	<ThemeProvider>
+		<App />
+	</ThemeProvider>
 );
