@@ -19,5 +19,6 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             // provides global variables to app
             __IS_DEV__: JSON.stringify(isDev),
         }),
+        new webpack.HotModuleReplacementPlugin(), // exchanges, adds, or removes modules while an application is running, without a full reload
     ];
 }
