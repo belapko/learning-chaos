@@ -1,6 +1,6 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
 import styles from './navbar.module.scss';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Link } from '@/shared/ui/link/Link';
 import { ThemeSwitcher } from '@/widgets/theme';
 import { LangSwitcher } from '@/widgets/lang';

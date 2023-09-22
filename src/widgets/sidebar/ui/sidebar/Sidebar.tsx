@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './sidebar.module.scss';
 import MenuIcon from '@/shared/assets/icons/menu.svg';
 import { useTranslation } from 'react-i18next';

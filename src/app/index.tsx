@@ -1,7 +1,7 @@
 import './styles/index.scss';
 import { useTheme } from './providers/ThemeProvider';
 import { withRouter } from './providers';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Routing } from '@/pages';
 import { Navbar } from '@/widgets/navbar';
 import { Sidebar } from '@/widgets/sidebar';

@@ -1,7 +1,7 @@
 import styles from './link.module.scss';
 import { FC, PropsWithChildren } from 'react';
 import { Link as ReactLink, LinkProps as ReactLinkProps, useMatch, useResolvedPath } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum LinkTheme {
 	PRIMARY = 'primary',

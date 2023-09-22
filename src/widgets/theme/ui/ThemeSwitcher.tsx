@@ -1,5 +1,5 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './theme.module.scss';
 import SunIcon from '@/shared/assets/icons/sun.svg';
 import MoonIcon from '@/shared/assets/icons/moon.svg';
