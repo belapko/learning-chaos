@@ -2,7 +2,12 @@
     color: var(--primary-light-color);
 }
 
-.primary::after  {
+.active {
+    color: var(--primary-light-color);
+    font-weight: var(--font-bold);
+}
+
+:not(.active).primary::after  {
     transition: 0.3s;
     background: none repeat scroll 0 0 var(--primary-dark-color);
     content: "";
@@ -11,6 +16,6 @@
     width: 0;
 }
 
-.primary:hover::after {
+:not(.active).primary:hover::after {
     width: 100%;
 }

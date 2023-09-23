@@ -1,7 +1,7 @@
 import { useTheme } from '@/app/providers/ThemeProvider';
 import styles from './navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Link } from '@/shared/ui/link/Link';
+import { NavLink } from '@/shared/ui/navlink/NavLink';
 import { ThemeSwitcher } from '@/widgets/theme';
 import { LangSwitcher } from '@/widgets/lang';
 import { useTranslation } from 'react-i18next';
@@ -26,10 +26,10 @@ export const Navbar = ({ className }: NavbarProps) => {
 			</ul>
 			<ul className={styles.gap10}>
 				<li>
-					<Link to={'/'}>{t('Main')}</Link>
+					<NavLink to={'/'}>{t('Main')}</NavLink>
 				</li>
 				<li>
-					<Link to={'/about'}>{t('About')}</Link>
+					<NavLink to={'/about'}>{t('About')}</NavLink>
 				</li>
 			</ul>
 			<a className={styles.productName} href='https://github.com/belapko' target='_blank' rel='noreferrer'>
