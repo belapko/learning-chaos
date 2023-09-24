@@ -1,3 +1,5 @@
 {
-	"PageNotFound": "This page not found :("
+  "PageNotFound": "This page not found :(",
+  "Error": "Something went wrong, fixing :(",
+  "Refresh": "Refresh"
 }

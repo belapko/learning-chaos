@@ -1,4 +1,4 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/theme';
 import styles from './navbar.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { NavLink } from '@/shared/ui/navlink/NavLink';

@@ -1,9 +1,9 @@
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/theme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './theme.module.scss';
 import SunIcon from '@/shared/assets/icons/sun.svg';
 import MoonIcon from '@/shared/assets/icons/moon.svg';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/theme';
 import { Button } from '@/shared/ui/button/Button';
 
 interface ThemeSwitcherProps {
