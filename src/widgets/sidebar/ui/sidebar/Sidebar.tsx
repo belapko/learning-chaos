@@ -18,11 +18,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
 	};
 
 	return (
-		<div className={classNames(styles.sidebar, [className], { [styles.show]: show })}>
+		<div data-testid='sidebar' className={classNames(styles.sidebar, [className], { [styles.show]: show })}>
 			<div className={styles.iconsContainer}>
-				<button className={styles.button} onClick={onToggle}>
+				<Button data-testid='sidebar-toggle' className={styles.button} onClick={onToggle}>
 					<MenuIcon className={styles.icon} />
-				</button>
+				</Button>
 			</div>
 			<div className={styles.iconsTextContainer}>
 				<Button className={classNames(styles.button, [styles.menuTitle])} onClick={onToggle}>

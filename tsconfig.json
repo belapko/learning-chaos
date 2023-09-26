@@ -1,22 +1,24 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true, // Если не хотим указывтаь тип, обязательно указываем any. Подсвечивает места где не указан тип явно
-        "module": "ESNext",
-        "target": "es5",
-        "jsx": "react-jsx",
-        "allowJs": true,
-        "moduleResolution": "node",
-        "esModuleInterop": true, // Позволяет работать с пакетами commongs как с обычными пакетами с помощью import
-        "allowSyntheticDefaultImports": true, // Позволяет пользоваться import, export default без *
-        "baseUrl": ".", // absolute imports
-        "paths": {
-            "@/*": ["./src/*"] // all absolute exports/imports from src like @/app/.....
-        }
-    },
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
-    }
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true, // Если не хотим указывтаь тип, обязательно указываем any. Подсвечивает места где не указан тип явно
+		"module": "ESNext",
+		"target": "es5",
+		"jsx": "react-jsx",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true, // Позволяет работать с пакетами commongs как с обычными пакетами с помощью import
+		"allowSyntheticDefaultImports": true, // Позволяет пользоваться import, export default без *
+		"baseUrl": ".", // absolute imports
+		"paths": {
+			"@/*": ["./src/*"] // all absolute exports/imports from src like @/app/.....
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	},
+	"include": ["./config/jest/jest-setup.ts", "**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
+	"exclude": ["node_modules"]
 }
