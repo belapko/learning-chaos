@@ -10,8 +10,8 @@
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 -c ./config/storybook",
+    "build-storybook": "storybook build -c ./config/storybook"
   },
   "author": "belapko",
   "license": "ISC",

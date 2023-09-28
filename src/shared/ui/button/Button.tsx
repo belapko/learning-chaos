@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum ButtonTheme {
 	CLEAR = 'clear',
-	BORDERED = 'bordered',
+	OUTLINE = 'outline',
 }
 
 interface ButtonProps {
