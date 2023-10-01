@@ -1,65 +1,67 @@
 @mixin menu-container {
-    background-color: var(--secondary-light-color);
-    padding: 10px 0px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
+	background-color: var(--secondary-light-color);
+	padding: 10px 0px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
 }
 
 .sidebar {
-    height: calc(100vh - var(--navbar-height));
-    padding: 20px 10px;
-    display: flex;
+	height: calc(100vh - var(--navbar-height));
+	padding: 20px 10px;
+	display: flex;
 }
 
 .iconsContainer {
-    // icons
-    @include menu-container;
-    width: var(--sidebar-width-collapsed);
-    align-items: center;
-    transition: all 0.4s ease-out;
-    box-shadow: -2px -2px 5px 2px var(--shadow-color);
+	// icons
+	@include menu-container;
+	width: var(--sidebar-width-collapsed);
+	align-items: center;
+	transition: all 0.4s ease-out;
+	box-shadow: -2px -2px 5px 2px var(--shadow-color);
 }
 
 .iconsTextContainer {
-    // icons text
-    @include menu-container;
-    align-items: flex-start;
-    overflow: hidden;
-    width: 0;
-    transition: all 0.4s ease-out;
+	// icons text
+	@include menu-container;
+	align-items: flex-start;
+	overflow: hidden;
+	width: 0;
+	transition: all 0.4s ease-out;
 }
 
-.show .iconsTextContainer {
-    width: var(--sidebar-width);
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
+.show {
+	.iconsTextContainer {
+		width: var(--sidebar-width);
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
 
-.show .iconsContainer {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+	.iconsContainer {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.icon {
+		transform: rotate(90deg);
+	}
 }
 
 .icon {
-    width: 2em;
-    height: 2em;
-    stroke: var(--secondary-font);
-    transition: transform ease 300ms;
-}
-
-.icon:hover {
-    transform: translate(2px, -2px);
+	width: 2em;
+	height: 2em;
+	stroke: var(--secondary-font);
+	transition: transform ease 500ms;
 }
 
 .button {
-    color: var(--secondary-font);
-    height: 2em;
+	color: var(--secondary-font);
+	height: 2em;
 }
 
 .menuTitle {
-    font-weight: var(--font-bold);
-    width: 100%;
-    border-bottom: 1px solid var(--secondary-font);
-    cursor: default;
+	font-weight: var(--font-bold);
+	width: 100%;
+	border-bottom: 1px solid var(--secondary-font);
+	cursor: default;
 }

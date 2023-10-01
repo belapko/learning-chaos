@@ -24,7 +24,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 					<MenuIcon className={styles.icon} />
 				</Button>
 			</div>
-			<div className={styles.iconsTextContainer}>
+			<div className={classNames(styles.iconsTextContainer, [], { [styles.show]: show })}>
 				<Button className={classNames(styles.button, [styles.menuTitle])} onClick={onToggle}>
 					{t('Menu')}
 				</Button>
