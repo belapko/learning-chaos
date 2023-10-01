@@ -17,13 +17,13 @@ describe('button', () => {
 		screen.debug();
 	});
 
-	test('button bordered theme', () => {
+	test('button outline theme', () => {
 		render(
-			<Button theme={ButtonTheme.BORDERED} onClick={() => {}}>
+			<Button theme={ButtonTheme.OUTLINE} onClick={() => {}}>
 				TEST
 			</Button>
 		);
-		expect(screen.getByText('TEST')).toHaveClass('bordered');
+		expect(screen.getByText('TEST')).toHaveClass('outline');
 		screen.debug();
 	});
 });
