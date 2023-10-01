@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-	return [
+	const plugins = [
 		new HtmlWebpackPlugin({
 			// includes html and js in html in build
 			template: paths.html, // path to index.html file
@@ -20,9 +20,16 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 			// provides global variables to app
 			__IS_DEV__: JSON.stringify(isDev),
 		}),
-		new webpack.HotModuleReplacementPlugin(), // exchanges, adds, or removes modules while an application is running, without a full reload
-		new BundleAnalyzerPlugin({
-			openAnalyzer: false, // do not run in browser automatically
-		}),
 	];
+
+	if (isDev) {
+		plugins.push(new webpack.HotModuleReplacementPlugin()); // exchanges, adds, or removes modules while an application is running, without a full reload)
+		plugins.push(
+			new BundleAnalyzerPlugin({
+				openAnalyzer: false, // do not run in browser automatically
+			})
+		);
+	}
+
+	return plugins;
 }
