@@ -14,7 +14,7 @@
 		"test:ui:ok": "npx loki approve",
 		"storybook": "storybook dev -p 6006 -c ./config/storybook",
 		"storybook:build": "storybook build -c ./config/storybook",
-		"test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static"
+		"test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\""
 	},
 	"author": "belapko",
 	"license": "ISC",
@@ -45,7 +45,9 @@
 		"@typescript-eslint/parser": "^6.7.2",
 		"babel-jest": "^29.7.0",
 		"babel-loader": "^9.1.3",
+		"concurrently": "^8.2.1",
 		"css-loader": "^6.8.1",
+		"deelay": "^2.0.0",
 		"eslint": "^8.49.0",
 		"eslint-config-standard-with-typescript": "^39.0.0",
 		"eslint-plugin-import": "^2.28.1",
