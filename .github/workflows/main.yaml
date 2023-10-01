@@ -2,9 +2,9 @@ name: Frontend CI
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    branches: [master]
+    branches: [main, development]
   pull_request:
-    branches: [master]
+    branches: [main, development]
 
 jobs:
   pipeline:
