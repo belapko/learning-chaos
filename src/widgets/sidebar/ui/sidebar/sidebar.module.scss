@@ -3,7 +3,6 @@
 	padding: 10px 0px;
 	display: flex;
 	flex-direction: column;
-	border-radius: 15px;
 }
 
 .sidebar {
@@ -15,22 +14,28 @@
 .iconsContainer {
 	// icons
 	@include menu-container;
+	border-radius: 15px;
 	width: var(--sidebar-width-collapsed);
 	align-items: center;
-	transition: all 0.4s ease-out;
 	box-shadow: -2px -2px 5px 2px var(--shadow-color);
+	transition: border-radius 0.3s ease-out 0.3s;
 }
 
 .iconsTextContainer {
 	// icons text
 	@include menu-container;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	align-items: flex-start;
 	overflow: hidden;
 	width: 0;
-	transition: all 0.4s ease-out;
+	transition: width 0.3s ease-in-out;
 }
 
 .show {
+	.iconsContainer {
+		transition: none;
+	}
 	.iconsTextContainer {
 		width: var(--sidebar-width);
 		border-top-left-radius: 0px;

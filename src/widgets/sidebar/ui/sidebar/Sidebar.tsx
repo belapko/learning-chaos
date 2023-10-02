@@ -19,7 +19,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
 	return (
 		<div data-testid='sidebar' className={classNames(styles.sidebar, [className], { [styles.show]: show })}>
-			<div className={styles.iconsContainer}>
+			<div className={classNames(styles.iconsContainer, [], {[styles.show]: show})}>
 				<Button data-testid='sidebar-toggle' className={styles.button} onClick={onToggle}>
 					<MenuIcon className={styles.icon} />
 				</Button>

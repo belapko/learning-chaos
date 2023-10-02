@@ -1,11 +1,11 @@
-@import './normalize.scss';
-@import './variables/global.scss';
-@import './themes/light.scss';
-@import './themes/dark.scss';
+@import './themes/light';
+@import './themes/dark';
+@import './normalize';
+@import './variables/global';
 
 .app {
-    font: var(--font-m);
     background: var(--bg-color);
+    font: var(--font-m);
     color: var(--default-font);
 }
 
