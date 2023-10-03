@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Modal } from './Modal';
 import { Theme } from '@/app/providers/theme';
-// TODO: Theme provider in stories in ThemeDecorator
+
 const meta = {
 	title: 'shared/Modal',
 	component: Modal,
@@ -20,6 +20,7 @@ const meta = {
 				Repellat, error? Veniam in, quos tenetur molestias laboriosam cum?
 			</p>
 		),
+		className: Theme.LIGHT,
 	},
 } satisfies Meta<typeof Modal>;
 
@@ -34,7 +35,6 @@ export const Closed: Story = {
 
 export const OpenedWithoutTitle: Story = {
 	args: {
-		title: 'Lorem ipsum dolor sit amet.',
 		isOpen: true,
 	},
 };
@@ -48,7 +48,6 @@ export const OpenedWithTitle: Story = {
 
 export const DarkOpenedWithoutTitle: Story = {
 	args: {
-		title: 'Lorem ipsum dolor sit amet.',
 		isOpen: true,
 		className: Theme.DARK,
 	},

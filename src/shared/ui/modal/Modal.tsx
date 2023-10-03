@@ -67,7 +67,7 @@ export const Modal = ({ className, children, title, isOpen, onClose }: ModalProp
 				<div className={styles.overlay} onClick={closeHandler}>
 					<div className={styles.content} onClick={onContentClick}>
 						{title && <h1 className={styles.header}>{title}</h1>}
-						{children}
+						<div>{children}</div>
 					</div>
 				</div>
 			</div>

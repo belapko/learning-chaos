@@ -25,6 +25,10 @@
 	border-radius: 1em;
 	background-color: var(--bg-color);
 
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
 	transition: transform 0.3s ease;
 	transform: scale(0.5);
 	max-width: 60%;
