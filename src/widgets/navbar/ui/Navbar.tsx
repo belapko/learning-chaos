@@ -6,7 +6,7 @@ import { LangSwitcher } from '@/widgets/lang';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '@/shared/ui/button/Button';
 import { useCallback, useState } from 'react';
-import { Modal } from '@/shared/ui/modal/Modal';
+import { LoginModal } from '@/features/auth-username';
 
 interface NavbarProps {
 	className?: string;
@@ -23,9 +23,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
 	return (
 		<nav className={classNames(styles.navbar, [className])}>
-			<Modal title={t('Sign in')} isOpen={isAuthModal} onClose={onToggleModal}>
-
-			</Modal>
+			<LoginModal isOpen={isAuthModal} onClose={onToggleModal}></LoginModal>
 			<ul className={styles.gap10}>
 				<li>
 					<ThemeSwitcher />
