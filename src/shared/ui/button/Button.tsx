@@ -10,17 +10,27 @@ export enum ButtonTheme {
 interface ButtonProps {
 	className?: string;
 	theme?: string;
-	onClick: () => void;
+	onClick?: () => void;
+	disabled?: boolean;
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 	children,
 	className,
 	theme = ButtonTheme.CLEAR,
+	disabled,
 	...otherProps
 }) => {
+	const mods: Record<string, boolean> = {
+		[styles.disabled]: disabled,
+	};
+
 	return (
-		<button className={classNames(styles.button, [className, styles[theme]])} {...otherProps}>
+		<button
+			className={classNames(styles.button, [className, styles[theme]], mods)}
+			disabled={disabled}
+			{...otherProps}
+		>
 			{children}
 		</button>
 	);
