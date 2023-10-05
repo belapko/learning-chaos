@@ -1,8 +1,8 @@
-import React, { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import React, { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
 import styles from './input.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-enum InputTheme {
+export enum InputTheme {
 	UNDERLINED = 'underlined',
 }
 
@@ -32,21 +32,12 @@ export const Input = memo(
 		...otherProps
 	}: InputProps) => {
 		const ref = useRef<HTMLInputElement>(null);
-		const [focused, setIsFocused] = useState(false);
+
 		useEffect(() => {
 			if (autofocus) {
-				setIsFocused(true);
 				ref.current.focus();
 			}
 		}, [autofocus]);
-
-		const onFocus = () => {
-			setIsFocused(true);
-		};
-
-		const onBlur = () => {
-			setIsFocused(false);
-		};
 
 		const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 			onChange?.(e.target.value); // if props onChange passed. Like onChange && onChange(.....)
@@ -63,8 +54,6 @@ export const Input = memo(
 					onChange={onChangeHandler}
 					placeholder={theme === InputTheme.UNDERLINED ? ' ' : placeholder}
 					{...otherProps}
-					onFocus={onFocus}
-					onBlur={onBlur}
 				/>
 				<label htmlFor='input' className={styles.label}>
 					{label}
