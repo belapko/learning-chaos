@@ -21,7 +21,7 @@
 }
 
 .content {
-	padding: 1em 2em;
+	padding: 1.5em 2em;
 	border-radius: 1em;
 	background-color: var(--bg-color);
 
@@ -37,7 +37,7 @@
 .header {
 	text-align: center;
 	font-size: var(--font-size-l);
-	border-bottom: 1px solid var(--default-font);
+	// border-bottom: 1px solid var(--default-font);
 }
 
 .opened {

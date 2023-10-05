@@ -6,7 +6,7 @@ enum InputTheme {
 	UNDERLINED = 'underlined',
 }
 
-// takes all props from type and exclude props we need
+// takes all props from type and exclude props we need. Take from HTMLInputElement, exclude value, onChange
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
 interface InputProps extends HTMLInputProps {
@@ -15,6 +15,7 @@ interface InputProps extends HTMLInputProps {
 	label?: string;
 	value?: string;
 	onChange?: (value: string) => void;
+	placeholder?: string;
 }
 
 export const Input = memo(
@@ -25,6 +26,7 @@ export const Input = memo(
 		value,
 		onChange,
 		type = 'text',
+		placeholder,
 		...otherProps
 	}: InputProps) => {
 		const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +41,7 @@ export const Input = memo(
 					type={type}
 					value={value}
 					onChange={onChangeHandler}
-					placeholder=' '
+					placeholder={theme === InputTheme.UNDERLINED ? ' ' : placeholder}
 					{...otherProps}
 				/>
 				<label htmlFor='input' className={styles.label}>
