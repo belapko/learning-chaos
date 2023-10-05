@@ -10,15 +10,22 @@ interface ModalProps {
 	title?: string;
 	isOpen: boolean;
 	onClose?: () => void;
+	lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 100;
 
-export const Modal = ({ className, children, title, isOpen, onClose }: ModalProps) => {
+export const Modal = ({ className, children, title, isOpen, onClose, lazy }: ModalProps) => {
 	const [isClosing, setIsClosing] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
-
 	const { theme } = useTheme();
+
+	useEffect(() => {
+		if (isOpen) {
+			setIsMounted(true);
+		}
+	}, [isOpen]);
 
 	const mods: Record<string, boolean> = {
 		[styles.opened]: isOpen,
@@ -60,6 +67,10 @@ export const Modal = ({ className, children, title, isOpen, onClose }: ModalProp
 	const onContentClick = (e: React.MouseEvent) => {
 		e.stopPropagation();
 	};
+
+	if (lazy && !isMounted) {
+		return null;
+	}
 
 	return (
 		<Portal>

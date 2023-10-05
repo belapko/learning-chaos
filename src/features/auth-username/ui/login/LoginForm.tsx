@@ -12,7 +12,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
 	const { t } = useTranslation('navbar');
 	return (
 		<div className={classNames(styles.form, [className])}>
-			<Input type='text' label='Имя пользователя' />
+			<Input type='text' label='Имя пользователя' autofocus={true} />
 			<Input type='password' label='Пароль' />
 			<Button theme={ButtonTheme.OUTLINE} onClick={() => {}}>
 				{t('Sign in')}
