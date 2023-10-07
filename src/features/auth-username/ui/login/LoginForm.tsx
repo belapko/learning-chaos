@@ -8,6 +8,7 @@ import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginRequestState, getPasswordState, getUsernameState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/login-username/loginByUsername';
 import { useAppDispatch, useAppSelector } from '@/shared/model';
+import { Text } from '@/shared/ui/text/Text';
 
 interface LoginFormProps {
 	className?: string;
@@ -42,7 +43,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
 	return (
 		<div className={classNames(styles.form, [className])}>
-			{error && <p>{error}</p>}
+			{error && <Text paragraph={error} isError={true} />}
 			<Input type='text' label='Имя пользователя' autofocus={true} value={username} onChange={onChangeUsername} />
 			<Input type='password' label='Пароль' value={password} onChange={onChangePassword} />
 			<Button theme={ButtonTheme.OUTLINE} onClick={onLoginClick} disabled={isLoading}>

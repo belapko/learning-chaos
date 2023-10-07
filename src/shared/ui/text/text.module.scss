@@ -1,0 +1,23 @@
+.error.text {
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	background-color: var(--error-color);
+
+	.title {
+		color: var(--error-text-color);
+	}
+
+	.paragraph {
+		color: var(--error-text-color);
+	}
+}
+
+.text {
+	.title {
+		color: var(--primary-light-color);
+	}
+
+    .paragraph {
+		color: var(--default-color);
+	}
+}
