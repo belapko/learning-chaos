@@ -1,5 +1,6 @@
 {
   "PageNotFound": "Эта страница не найдена :(",
   "Error": "Что то пошло не так, уже исправляем :(",
-  "Refresh": "Обновить"
+  "Refresh": "Обновить",
+  "Oops! Either this is not your account, or you entered the wrong password.": "Ой-ой! Либо это не Вы, либо пароль неверный."
 }

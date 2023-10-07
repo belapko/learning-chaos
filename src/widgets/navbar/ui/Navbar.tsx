@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '@/shared/ui/button/Button';
 import { useCallback, useState } from 'react';
 import { LoginModal } from '@/features/auth-username';
+import { useAppDispatch, useAppSelector } from '@/shared/model';
+import { getUserAuthData, userActions } from '@/entities/user';
 
 interface NavbarProps {
 	className?: string;
@@ -15,15 +17,26 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 	const { t } = useTranslation('navbar');
 
+	const authData = useAppSelector(getUserAuthData);
+
 	const [isAuthModal, setIsAuthModal] = useState(false);
 
-	const onToggleModal = useCallback(() => {
-		setIsAuthModal((prev) => !prev);
+	const dispatch = useAppDispatch();
+
+	const handleOpenModal = useCallback(() => {
+		setIsAuthModal(true);
 	}, []);
+
+	const handleCloseModal = useCallback(() => {
+		setIsAuthModal(false);
+	}, []);
+
+	const onLogout = useCallback(() => {
+		dispatch(userActions.logout());
+	}, [dispatch]);
 
 	return (
 		<nav className={classNames(styles.navbar, [className])}>
-			<LoginModal isOpen={isAuthModal} onClose={onToggleModal}></LoginModal>
 			<ul className={styles.gap10}>
 				<li>
 					<ThemeSwitcher />
@@ -45,11 +58,12 @@ export const Navbar = ({ className }: NavbarProps) => {
 			</a>
 			<ul>
 				<li>
-					<Button theme={ButtonTheme.CLEAR} onClick={onToggleModal}>
-						{t('Sign in')}
+					<Button theme={ButtonTheme.CLEAR} onClick={authData ? onLogout : handleOpenModal}>
+						{t(authData ? 'Sign out' : 'Sign in')}
 					</Button>
 				</li>
 			</ul>
+			{!authData && <LoginModal isOpen={isAuthModal} onClose={handleCloseModal}/>}
 		</nav>
 	);
 };
