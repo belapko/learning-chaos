@@ -48,7 +48,7 @@ export const Input = memo(
 				<input
 					ref={ref}
 					id='input'
-					className={styles.input}
+					className={classNames(styles.input, [className])}
 					type={type}
 					value={value}
 					onChange={onChangeHandler}
