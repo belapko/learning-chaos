@@ -7,7 +7,7 @@ import { loginReducer } from '@/features/auth-username/model/slice/loginSlice';
 export function createReduxStore(initialState?: StateSchema) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		user: userReducer,
-		LoginForm: loginReducer,
+		loginForm: loginReducer,
 	};
 
 	return configureStore<StateSchema>({

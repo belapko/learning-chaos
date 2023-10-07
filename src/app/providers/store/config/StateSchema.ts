@@ -3,5 +3,5 @@ import { LoginSchema } from '@/features/auth-username';
 
 export interface StateSchema {
 	user: UserSchema;
-	LoginForm?: LoginSchema; // optional param for lazy loading store, reducer
+	loginForm?: LoginSchema; // optional param for lazy loading store, reducer
 }

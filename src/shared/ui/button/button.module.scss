@@ -16,6 +16,12 @@
     color: var(--primary-light-color);
     border-radius: 1em;
     background: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    &:not(.disabled):hover {
+        background-color: var(--primary-light-color);
+        color: var(--bg-color);
+    }
 }
 
 .disabled {
