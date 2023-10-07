@@ -43,7 +43,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
 	return (
 		<div className={classNames(styles.form, [className])}>
-			{error && <Text className={styles.width} paragraph={error} isError={true} />}
+			{error && <Text className={styles.width} paragraph={t('Oops! Either this is not your account, or you entered the wrong password.')} isError={true} />}
 			<Input className={styles.width} type='text' label='Имя пользователя' autofocus={true} value={username} onChange={onChangeUsername} />
 			<Input className={styles.width} type='password' label='Пароль' value={password} onChange={onChangePassword} />
 			<Button className={styles.width} theme={ButtonTheme.OUTLINE} onClick={onLoginClick} disabled={isLoading}>
