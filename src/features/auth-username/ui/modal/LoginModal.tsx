@@ -1,8 +1,7 @@
-import styles from './loginModal.module.scss';
 import { Modal } from '@/shared/ui/modal/Modal';
-import { LoginForm } from '../login/LoginForm';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
+import { LoginFormLazy } from '../login/LoginForm.lazy';
+import { Spinner } from '@/shared/ui/spinner/Spinner';
 
 interface LoginModalProps {
 	className?: string;
@@ -18,8 +17,10 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
 	}, [onClose]);
 
 	return (
-		<Modal className={classNames(styles.modal, [className])} isOpen={isOpen} onClose={onClose} lazy={true}>
-			<LoginForm />
+		<Modal className={className} isOpen={isOpen} onClose={onClose} lazy={true}>
+			<Suspense fallback={<Spinner />}>
+				<LoginFormLazy />
+			</Suspense>
 		</Modal>
 	);
 };

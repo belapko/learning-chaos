@@ -9,7 +9,7 @@ describe('button', () => {
 
 	test('button clear theme', () => {
 		render(
-			<Button theme={ButtonTheme.CLEAR} onClick={() => {}}>
+			<Button theme={ButtonTheme.CLEAR}>
 				TEST
 			</Button>
 		);
@@ -19,7 +19,7 @@ describe('button', () => {
 
 	test('button outline theme', () => {
 		render(
-			<Button theme={ButtonTheme.OUTLINE} onClick={() => {}}>
+			<Button theme={ButtonTheme.OUTLINE}>
 				TEST
 			</Button>
 		);
